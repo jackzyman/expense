@@ -15,3 +15,10 @@ INFO:
 
 >>>>> Income : 500.0
 >>>>> Expense : 100.0
+Sep 15, 2018 7:28:02 PM java.util.logging.LogManager$RootLogger log
+INFO: 
++1000.0 : dad
+-500.0 : egg
+
+>>>>> Income : 1000.0
+>>>>> Expense : 500.0
