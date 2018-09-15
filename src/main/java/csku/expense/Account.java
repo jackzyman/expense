@@ -1,5 +1,6 @@
 package csku.expense;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class Account {
@@ -7,6 +8,8 @@ public class Account {
     private double balance;
 
     private ArrayList<AccountHistory> histories = new ArrayList<>();
+
+    Logs logs = null;
 
 
     public Account(double initialMoney){
@@ -19,9 +22,10 @@ public class Account {
     }
 
 
-    public void income(double money, String desc){
+    public void income(double money, String desc) {
             balance += money;
             histories.add(new AccountHistory(money, desc, "+"));
+//            logs.logging();
     }
 
     public void expense(double money, String desc) throws OverExpenseException{
@@ -31,6 +35,8 @@ public class Account {
                 throw new OverExpenseException("be careful! your expense more than your balance\n");
             }
     }
+
+
 
     public String getTotal(){
         String temp = "\n";

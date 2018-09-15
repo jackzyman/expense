@@ -1,13 +1,15 @@
 package csku.expense;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 public class LedgerConsoleUI {
 
-    public void start(){
+    public void start() throws IOException {
 
         Ledger ledgerAccount;
         ledgerAccount = new Ledger();
+        Logs logs = null;
 
         Scanner in = new Scanner(System.in);
 
@@ -39,6 +41,7 @@ public class LedgerConsoleUI {
                 }
                 else if (command.equalsIgnoreCase("C")) {
                     System.out.println(ledgerAccount.getTotal());
+                    logs.logging(ledgerAccount.getTotal());
                 }
                 else if (command.equalsIgnoreCase("D"))
                     System.exit(0);
@@ -46,6 +49,7 @@ public class LedgerConsoleUI {
                     System.out.println("Illegal input!");
             }
         }
+
     }
 }
 
