@@ -15,7 +15,7 @@ public class Logs {
 
         Logger logger = Logger.getLogger("");
         logger.setLevel(Level.INFO);//Loget Info, Warning dhe Severe do ruhen
-        fileTxt = new FileHandler("/Users/mp/Desktop/expense/logs.txt", true);
+        fileTxt = new FileHandler("/logs.txt", true);
         formatterTxt = new SimpleFormatter();
         fileTxt.setFormatter(formatterTxt);
         logger.addHandler(fileTxt);

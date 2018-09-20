@@ -19,15 +19,15 @@ public class Ledger {
         state = TRANSACT;
     }
 
-   public void income(double money, String desc){
+   public void income(double money, String desc, String date){
        if(state == TRANSACT){
-           account.income(money, desc);
+           account.income(money, desc, date);
        }
    }
 
-   public void expense(double money, String desc) throws OverExpenseException{
+   public void expense(double money, String desc, String date) throws OverExpenseException{
        if(state == TRANSACT) {
-           account.expense(money, desc);
+           account.expense(money, desc, date);
        }
 
    }

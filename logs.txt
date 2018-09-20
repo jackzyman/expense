@@ -22,3 +22,10 @@ INFO:
 
 >>>>> Income : 1000.0
 >>>>> Expense : 500.0
+Sep 15, 2018 8:18:57 PM java.util.logging.LogManager$RootLogger log
+INFO: 
++100.0 : askpwd
+-222222.0 : sqpmwspkwm
+
+>>>>> Income : 100.0
+>>>>> Expense : 222222.0
