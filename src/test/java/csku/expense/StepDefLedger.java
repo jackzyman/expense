@@ -6,6 +6,8 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
+import java.io.IOException;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 public class StepDefLedger {
@@ -25,21 +27,21 @@ public class StepDefLedger {
     }
 
     @When("I earned (\\d+) from (.*)")
-    public void i_earned_from(int income, String desc){
-        ledgerAccount.income(income, desc);
+    public void i_earned_from(int income, String desc) throws IOException {
+        ledgerAccount.income(income, desc, "date?");
     }
 
 
 
     @When("I spend (\\d+) for buy (.*)")
     public void i_spend_for_buy(int expense, String desc) throws OverExpenseException{
-        ledgerAccount.expense(expense, desc);
+        ledgerAccount.expense(expense, desc, "date?");
     }
 
     @When("I spend (\\d+) over for buy (.*)")
     public void i_spend_over_for_buy(int expense, String desc)throws OverExpenseException{
         assertThrows(OverExpenseException.class,
-                () -> ledgerAccount.expense(expense, desc));
+                () -> ledgerAccount.expense(expense, desc, "date?"));
     }
 
     @Then("balance is (.*)")

@@ -1,13 +1,18 @@
 package csku.expense;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class Account {
 
     private double balance;
-
     private ArrayList<AccountHistory> histories = new ArrayList<>();
 
+
+
+    public ArrayList<AccountHistory> getHistories() {
+        return histories;
+    }
 
     public Account(double initialMoney){
         this.balance = initialMoney;
@@ -19,17 +24,25 @@ public class Account {
     }
 
 
-    public void income(double money, String desc){
+    public void income(double money, String desc, String date)  {
             balance += money;
-            histories.add(new AccountHistory(money, desc, "+"));
+            histories.add(new AccountHistory(date, desc, money, "+"));
+//            logs.logging(getTotal());
     }
 
-    public void expense(double money, String desc) throws OverExpenseException{
+    public void expense(double money, String desc, String date) throws OverExpenseException{
             balance -= money;
-        histories.add(new AccountHistory(money, desc, "-"));
+        histories.add(new AccountHistory(date, desc, money, "-"));
             if(money > balance) {
                 throw new OverExpenseException("be careful! your expense more than your balance\n");
             }
+    }
+
+    @Override
+    public String toString() {
+        return
+                "Balance : " + balance
+                ;
     }
 
     public String getTotal(){
@@ -52,5 +65,22 @@ public class Account {
     public double getBalance() {
         return balance;
     }
+
+    private void sumNewBalance(){
+        this.balance = 0;
+        for(AccountHistory obj : this.histories){
+            if (obj.getType().equals("+")) {
+                this.balance += obj.money;
+            } else {
+                this.balance -= obj.money;
+            }
+        }
+    }
+
+    public void editHistory(int index ,AccountHistory newhis){
+        this.histories.set(index, newhis);
+        this.sumNewBalance();
+    }
+
 
 }
