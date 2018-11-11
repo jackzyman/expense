@@ -10,5 +10,6 @@ public class AccountHistory {
         this.money = money;
         this.des = des;
         this.type = type;
+    
     }
 }
