@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.HomeController">
+    <columnConstraints>
+        <ColumnConstraints />
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints />
+    </rowConstraints>
+    <children>
+        <Pane prefHeight="600.0" prefWidth="400.0">
+            <children>
+                <TableView fx:id="table" layoutX="11.0" layoutY="62.0" prefHeight="423.0" prefWidth="379.0">
+                    <columns>
+                        <TableColumn fx:id="dateColumn" prefWidth="57.0" text="Date" />
+                        <TableColumn fx:id="desColumn" prefWidth="198.0" text="Description" />
+                        <TableColumn fx:id="amountColumn" prefWidth="76.0" text="Amount" />
+                        <TableColumn fx:id="typeColumn" prefWidth="47.0" text="Type" />
+                    </columns>
+                </TableView>
+                <TextField fx:id="dateTextField" layoutX="11.0" layoutY="528.0" prefHeight="27.0" prefWidth="83.0" promptText="Date" />
+                <TextField fx:id="desTextField" layoutX="97.0" layoutY="528.0" prefHeight="27.0" prefWidth="195.0" promptText="Description" />
+                <TextField fx:id="amountField" layoutX="296.0" layoutY="528.0" prefHeight="27.0" prefWidth="92.0" promptText="Amount" />
+
+                <Button fx:id="expenseButton" layoutX="135.0" layoutY="559.0" mnemonicParsing="false" onAction="#handleExpenseBtn" prefHeight="27.0" prefWidth="119.0" text="Add Expense" />
+                <Button fx:id="editButton" layoutX="338.0" layoutY="559.0" mnemonicParsing="false" onAction="#handleEditBtn" prefHeight="27.0" prefWidth="53.0" text="Edit" />
+                <Button fx:id="incomeButton" layoutX="11.0" layoutY="559.0" mnemonicParsing="false" onAction="#handleIncomBtn" prefHeight="27.0" prefWidth="119.0" text="Add Income" />
+
+                <Label alignment="CENTER" layoutX="11.0" layoutY="14.0" maxWidth="1.7976931348623157E308" prefHeight="36.0" prefWidth="379.0" text="Expense">
+                    <font>
+                        <Font name="System Bold" size="28.0" />
+                    </font>
+                </Label>
+                <Label fx:id="balanceLabel" layoutX="276.0" layoutY="493.0" prefHeight="17.0" prefWidth="110.0" text="Balance : 0" />
+            <Button fx:id="swichButton" layoutX="14.0" layoutY="488.0" mnemonicParsing="false" onAction="#switchDB" prefHeight="27.0" prefWidth="119.0" text="SwichDB" />
+            </children>
+        </Pane>
+    </children>
+</GridPane>

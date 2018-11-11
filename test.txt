@@ -1,0 +1,2 @@
+1 sell steak 100 +
+22 buy toy 200 -
