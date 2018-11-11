@@ -1,0 +1,31 @@
+Sep 14, 2018 2:18:52 PM java.util.logging.LogManager$RootLogger log
+INFO: test
+
+Sep 14, 2018 2:25:01 PM java.util.logging.LogManager$RootLogger log
+INFO: 
++20.0 : mom
+-10.0 : egg
+
+>>>>> Income : 20.0
+>>>>> Expense : 10.0
+Sep 14, 2018 2:27:25 PM java.util.logging.LogManager$RootLogger log
+INFO: 
++500.0 : mom
+-100.0 : chicken
+
+>>>>> Income : 500.0
+>>>>> Expense : 100.0
+Sep 15, 2018 7:28:02 PM java.util.logging.LogManager$RootLogger log
+INFO: 
++1000.0 : dad
+-500.0 : egg
+
+>>>>> Income : 1000.0
+>>>>> Expense : 500.0
+Sep 15, 2018 8:18:57 PM java.util.logging.LogManager$RootLogger log
+INFO: 
++100.0 : askpwd
+-222222.0 : sqpmwspkwm
+
+>>>>> Income : 100.0
+>>>>> Expense : 222222.0

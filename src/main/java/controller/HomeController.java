@@ -1,6 +1,12 @@
 package controller;
 
+<<<<<<< HEAD
 import csku.expense.*;
+=======
+import csku.expense.Account;
+import csku.expense.AccountHistory;
+import csku.expense.OverExpenseException;
+>>>>>>> origin/master
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -13,8 +19,11 @@ import java.io.IOException;
 
 public class HomeController {
 
+<<<<<<< HEAD
     private Conectable connector;
 
+=======
+>>>>>>> origin/master
     @FXML
     TableView<AccountHistory> table = new TableView<>();
     @FXML private TableColumn<AccountHistory, String> dateColumn;
@@ -55,18 +64,28 @@ public class HomeController {
     }
 
     private void initTableV(){
+<<<<<<< HEAD
         connector = DbConnector.getInstance();
 
         ObservableList<AccountHistory> histories = FXCollections.observableArrayList();
         for(AccountHistory obj : accounts.getHistories()){
             histories.add(new AccountHistory(obj.getDate(), obj.getDes(), obj.getMoney(), obj.getType()));
+=======
+        ObservableList<AccountHistory> histories = FXCollections.observableArrayList();
+        for(AccountHistory obj : accounts.getHistories()){
+            histories.add(new AccountHistory(obj.getMoney(), obj.getDes(), obj.getType(), obj.getDate()));
+>>>>>>> origin/master
         }
 
         dateColumn.setCellValueFactory(new PropertyValueFactory<>("date"));
         desColumn.setCellValueFactory(new PropertyValueFactory<>("des"));
         amountColumn.setCellValueFactory(new PropertyValueFactory<>("money"));
         typeColumn.setCellValueFactory(new PropertyValueFactory<>("type"));
+<<<<<<< HEAD
         table.setItems(connector.viewHistory());
+=======
+        table.setItems(histories);
+>>>>>>> origin/master
         updateBalance();
 //        clearTextField();
     }
@@ -80,12 +99,19 @@ public class HomeController {
 
 
             if(isEdit){
+<<<<<<< HEAD
                 accounts.editHistory(selectedIndex, new AccountHistory(dateTextField.getText(), desTextField.getText(), Double.parseDouble(amountField.getText()), "+"));
+=======
+                accounts.editHistory(selectedIndex, new AccountHistory(Double.parseDouble(amountField.getText()), desTextField.getText(), "+", dateTextField.getText()));
+>>>>>>> origin/master
                 isEdit = false;
                 editButton.setDisable(false);
             } else {
                 accounts.income(Double.parseDouble(amountField.getText()), desTextField.getText(), dateTextField.getText());
+<<<<<<< HEAD
                 connector.add(dateTextField.getText(), desTextField.getText(), Double.parseDouble(amountField.getText()), "+");
+=======
+>>>>>>> origin/master
             }
 
             updateBalance();
@@ -94,20 +120,30 @@ public class HomeController {
         }
     }
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> origin/master
     @FXML
     public void handleExpenseBtn(ActionEvent event){
 
             if(!dateTextField.getText().isEmpty() && !desTextField.getText().isEmpty() && !amountField.getText().isEmpty()){
                 try {
                     if(isEdit){
+<<<<<<< HEAD
                         accounts.editHistory(selectedIndex, new AccountHistory(dateTextField.getText(), desTextField.getText(), Double.parseDouble(amountField.getText()), "--"));
+=======
+                        accounts.editHistory(selectedIndex, new AccountHistory(Double.parseDouble(amountField.getText()), desTextField.getText(), "-", dateTextField.getText()));
+>>>>>>> origin/master
                         isEdit = false;
                         editButton.setDisable(false);
                     } else {
                         accounts.expense(Double.parseDouble(amountField.getText()), desTextField.getText(), dateTextField.getText());
+<<<<<<< HEAD
                         connector.add(dateTextField.getText(), desTextField.getText(), Double.parseDouble(amountField.getText()), "-");
+=======
+>>>>>>> origin/master
                     }
 
                 } catch (OverExpenseException e) {
@@ -139,6 +175,7 @@ public class HomeController {
 
     }
 
+<<<<<<< HEAD
     public void switchDB() {
         if (DbConnector.class == connector.getClass()) {
             connector = DbFileConnector.getInstance();
@@ -149,6 +186,8 @@ public class HomeController {
         table.setItems(connector.viewHistory());
     }
 
+=======
+>>>>>>> origin/master
 
 
 

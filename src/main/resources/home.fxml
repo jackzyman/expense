@@ -24,9 +24,15 @@
                 <TableView fx:id="table" layoutX="11.0" layoutY="62.0" prefHeight="423.0" prefWidth="379.0">
                     <columns>
                         <TableColumn fx:id="dateColumn" prefWidth="57.0" text="Date" />
+<<<<<<< HEAD
                         <TableColumn fx:id="desColumn" prefWidth="198.0" text="Description" />
                         <TableColumn fx:id="amountColumn" prefWidth="76.0" text="Amount" />
                         <TableColumn fx:id="typeColumn" prefWidth="47.0" text="Type" />
+=======
+                        <TableColumn fx:id="desColumn" prefWidth="214.0" text="Description" />
+                        <TableColumn fx:id="amountColumn" prefWidth="69.0" text="Amount" />
+                        <TableColumn fx:id="typeColumn" prefWidth="38.0" text="Type" />
+>>>>>>> origin/master
                     </columns>
                 </TableView>
                 <TextField fx:id="dateTextField" layoutX="11.0" layoutY="528.0" prefHeight="27.0" prefWidth="83.0" promptText="Date" />
@@ -43,7 +49,10 @@
                     </font>
                 </Label>
                 <Label fx:id="balanceLabel" layoutX="276.0" layoutY="493.0" prefHeight="17.0" prefWidth="110.0" text="Balance : 0" />
+<<<<<<< HEAD
             <Button fx:id="swichButton" layoutX="14.0" layoutY="488.0" mnemonicParsing="false" onAction="#switchDB" prefHeight="27.0" prefWidth="119.0" text="SwichDB" />
+=======
+>>>>>>> origin/master
             </children>
         </Pane>
     </children>
